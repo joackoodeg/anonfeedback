@@ -10,10 +10,13 @@ datasource db {
 model Message {
   id      Int    @id @default(autoincrement())
   content String
-  stars   Int    @default(1)
+  proyect  Proyects @relation(fields: [proyectId], references: [id])
+  proyectId Int 
 }
+
 
 model Proyects {
   id   Int    @id @default(autoincrement())
   name String
+  messages Message[]
 }
