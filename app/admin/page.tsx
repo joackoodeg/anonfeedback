@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import Button from "../components/Button";
 
 export default function AdminPage() {
   const router = useRouter();
@@ -22,9 +23,9 @@ export default function AdminPage() {
   };
 
   return (
-    <>
-      <h1>hola</h1>
-      <button onClick={logout}>Logout</button>
-    </>
+    <div className="space-y-4">
+      <Button onClick={() => router.push("/admin/view")}>Ver Mensajes</Button>
+      <Button onClick={logout}>Logout</Button>
+    </div>
   );
 }
